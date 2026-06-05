@@ -8,7 +8,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int index = 0;
+  int _index = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -27,13 +27,12 @@ class _HomeState extends State<Home> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: index,
-        onTap: (int newIndex) {
-          setState(() {
-            index = newIndex;
-          });
-          print('Index tapped: $index');
-        },
+        currentIndex: _index,
+        onTap: _onTap,
+        // onTap: (newIndex) => _onTap(newIndex),
+        // onTap: (newIndex) {
+        //   _onTap(newIndex);
+        // },
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -46,5 +45,12 @@ class _HomeState extends State<Home> {
         ],
       ),
     );
+  }
+
+  void _onTap(int newIndex) {
+    setState(() {
+      _index = newIndex;
+    });
+    print('Index tapped: $_index');
   }
 }
