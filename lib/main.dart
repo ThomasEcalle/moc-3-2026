@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:moc3_20/home.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Home(),
+      home: const Home(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: TextTheme(
