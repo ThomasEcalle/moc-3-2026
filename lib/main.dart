@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moc3_20/exercises/a_exercise.dart';
 import 'package:moc3_20/home.dart';
 
 void main() {
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Home(),
+      home: AExercise(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: TextTheme(
