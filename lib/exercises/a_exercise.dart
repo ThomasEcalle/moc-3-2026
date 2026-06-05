@@ -13,20 +13,32 @@ class AExercise extends StatelessWidget {
   }
 }
 
-class MyButton extends StatelessWidget {
+class MyButton extends StatefulWidget {
   const MyButton({super.key});
+
+  @override
+  State<MyButton> createState() => _MyButtonState();
+}
+
+class _MyButtonState extends State<MyButton> {
+  bool _clicked = false;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        print('Clicked !');
-      },
-      child: Container(
-        height: 100,
-        width: 100,
-        color: Colors.red,
+      onTap: _onTap,
+      child: AnimatedContainer(
+        duration: Duration(seconds: 1),
+        height: _clicked ? 120 : 100,
+        width: _clicked ? 50 : 100,
+        color: _clicked ? Colors.red : Colors.blue,
       ),
     );
+  }
+
+  void _onTap() {
+    setState(() {
+      _clicked = !_clicked;
+    });
   }
 }
