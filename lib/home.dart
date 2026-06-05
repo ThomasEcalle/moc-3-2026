@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int index = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +27,13 @@ class Home extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: index,
+        onTap: (int newIndex) {
+          setState(() {
+            index = newIndex;
+          });
+          print('Index tapped: $index');
+        },
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
