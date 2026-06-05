@@ -5,10 +5,31 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'Salut les MOC',
-        style: Theme.of(context).textTheme.bodyLarge,
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        title: Text('Home !'),
+        actions: [
+          Icon(Icons.edit),
+        ],
+      ),
+      body: Center(
+        child: Text(
+          'Salut les MOC',
+          style: Theme.of(context).textTheme.bodyLarge,
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Settings',
+          ),
+        ],
       ),
     );
   }
