@@ -4,6 +4,7 @@ import 'package:moc3_20/exercises/b_exercise.dart';
 import 'package:moc3_20/exercises/c_exercise.dart';
 import 'package:moc3_20/home.dart';
 import 'package:moc3_20/layouts/layout_screen.dart';
+import 'package:moc3_20/lists/lists_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: LayoutScreen(),
+      home: ListsScreen(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: TextTheme(
