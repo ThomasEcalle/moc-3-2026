@@ -22,11 +22,11 @@ void main() {
     address: 'Address 1',
   );
   const toto2 = Toto('Salut', address: 'Address 2');
-  const toto3 = Toto('Salut', address: 'Address 3');
+  const toto3 = Toto('Salut', address: 'Address 2');
 
   print(toto3.friend?.firstName ?? 'Cas par défaut');
 
   // print(toto1.age);
   // print(toto2.age);
-  // print(toto2 == toto3);
+  print(toto2 == toto3);
 }
