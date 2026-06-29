@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:moc3_20/exercises/a_exercise.dart';
-import 'package:moc3_20/exercises/b_exercise.dart';
-import 'package:moc3_20/exercises/c_exercise.dart';
-import 'package:moc3_20/home.dart';
-import 'package:moc3_20/layouts/layout_screen.dart';
-import 'package:moc3_20/lists/lists_screen.dart';
-import 'package:moc3_20/networks_call/webservices_screen.dart';
+import 'package:moc3_20/navigation/navigation_screen.dart';
+
+import 'navigation/screen_b.dart';
+import 'navigation/screen_c.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: WebServicesScreen(),
+      //home: NavigationScreen(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: TextTheme(
@@ -27,6 +24,36 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
+      routes: {
+        '/': (context) => NavigationScreen(),
+        ScreenB.routeName: (context) => ScreenB(),
+      },
+      onGenerateRoute: (settings) {
+        Widget content = const SizedBox();
+
+        switch (settings.name) {
+          case ScreenC.routeName:
+            final argument = settings.arguments;
+            if (argument is String) {
+              content = ScreenC(id: argument);
+            }
+            break;
+        }
+
+        return MaterialPageRoute(builder: (context) => content);
+      },
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
