@@ -5,6 +5,7 @@ import 'package:moc3_20/exercises/c_exercise.dart';
 import 'package:moc3_20/home.dart';
 import 'package:moc3_20/layouts/layout_screen.dart';
 import 'package:moc3_20/lists/lists_screen.dart';
+import 'package:moc3_20/networks_call/webservices_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: ListsScreen(),
+      home: WebServicesScreen(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: TextTheme(
